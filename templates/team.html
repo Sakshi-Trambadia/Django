@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center">{{Name}}</h1>
+    <h2>Number of trophies : {{trophies}}</h2>
+    <h2>List of Players :</h2>
+    {% for i in players %}
+      <h3>{{i}}</h3>
+    {% endfor %}
+
+    {%  if trophies <= 2 %}
+     <h1> Team is not performing well </h1>
+    {% else %}
+     <h1> Team is performing well </h1>
+     {% endif %}
+</body>
+</html>

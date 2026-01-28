@@ -25,3 +25,21 @@ def shows(request):
 
 def news(request):
     return render(request,"news.html")
+
+def recap(request):
+    return render(request,"recap.html")
+
+def recipe(request):
+    ingredient = ["noodles","water"]
+    data={"name":"maggie","time":20,"ingredient":ingredient}
+    return render(request,"recipe.html",data)
+
+def team(request):
+    playerlist = ["Rahul","Virat","Gill","Hardik"]
+    data={"Name":"TEAM INDIA","captain":"Rohit Sharma","players":playerlist,"trophies":2}
+    return render(request,"team.html",data)
+
+def person(request):
+    PersonName = ["A","B","C","D","E"]
+    data={"NameOfPerson":PersonName,"age":15}
+    return render(request,"person.html",data)

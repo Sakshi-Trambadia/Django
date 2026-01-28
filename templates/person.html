@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Check whether person is eligible to vote or not</h1>
+    <h2>Name of Persons:</h2>
+    {% for i in NameOfPerson %}
+      <h3> {{i}}</h3>
+    {% endfor %}
+     
+    {%  if age >= 18 %}
+    <h1> Eligible to vote </h1>
+    {% else %}
+     <h1> Not eligible to vote </h1>
+     {% endif %}
+</body>
+</html>

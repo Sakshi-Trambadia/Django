@@ -26,6 +26,11 @@ urlpatterns = [
     path("",views.home),
     path("movies/",views.movies),
     path("shows/",views.shows),
-    path("news/",views.news)
+    path("news/",views.news),
+    path("recap/",views.recap),
+    path("recipe/",views.recipe),
+    path("team/",views.team),
+    path("person/",views.person)
+    
     
 ]
