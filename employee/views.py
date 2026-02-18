@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from .models import Employee,Shop
 from .forms import EmployeeForm,CourseForm,ShopForm
 
@@ -9,7 +9,7 @@ def employeeList(request):
     #employees = Employee.objects.all() #select * from employee
     employees = Employee.objects.all().values()
     #employees = Employee.objects.all().values_list()
-    print(employees)
+    print(employeeList)
     return render(request, 'employee/employeeList.html',{"employees":employees})
 
 def employeeFilter(request):
@@ -102,4 +102,48 @@ def createCourse(request):
     
 def createItem(request):
     Shop.objects.create(name="colddrink",itemId=12,price=10.45,stock=100)    
+        
+def deleteEmployee(request,id):
+    #delete employeee having id=1
+    print("id from url= ",id)
+    Employee.objects.filter(id=id).delete()
+    #return HttpResponse("EMPLOYEE DELETED")
+    return redirect(employeeList)     
+
+
+def filterEmployee(request):
+    print("filter employee called......")
+    employees = Employee.objects.filter(age__gte=25).values()
+    print("filter employees = ",employees) 
+    #return redirect(employeeList)
+    return render(request,"employee/employeeList.html",{"employees":employees})  
+
+def sortEmployee(request,id):
+    print("sorted employe...")
+    if id==1:
+     employees = Employee.objects.all().order_by('age')   # ASC
+    elif id==2:
+      employees = Employee.objects.all().order_by('-age')  # DESC
+    else:
+        employees = Employee.objects.all()  
+    return render(request,"employee/employeeList.html",{"employees":employees})  
+
+
+def updateEmployee(request,id):
+    #database existing user... id -->
+    employee = Employee.objects.get(id=id) #select * from employee where id = 1
+    
+    if request.method == "POST":
+        form = EmployeeForm(request.POST,instance=employee)
+        form.save()
+        return redirect("employeeList")
+    else:
+        form = EmployeeForm(instance=employee)    
+        return render(request,"employee/updateEmployee.html",{"form":form})
+
+
+
+
+  
+    
         

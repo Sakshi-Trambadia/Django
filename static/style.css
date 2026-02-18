@@ -1,0 +1,130 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===== BODY ===== */
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#1e293b,#3b82f6);
+    display:flex;
+    flex-direction:column;
+}
+
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    background:#1e293b;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+.logo a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:600;
+    padding:8px 20px;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    background:#3b82f6;
+}
+
+
+/* ===== CREATE EMPLOYEE BUTTON ===== */
+
+.create-btn{
+    margin-top:20px;
+    text-decoration:none;
+    background:#3b82f6;
+    color:#ffffff;
+    padding:12px 35px;
+    border-radius:50px;              /* Fully Rounded */
+    font-weight:600;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+.create-btn:hover{
+    background:#1e293b;
+    transform:translateY(-4px);
+}
+
+
+/* ===== CONTENT SECTION ===== */
+
+.content{
+    width:85%;
+    margin:40px auto;
+    padding:30px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:0 8px 32px rgba(0,0,0,0.25);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+/* ===== GLASS TABLE ===== */
+
+.content table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+    color:#ffffff;
+}
+
+.content table th{
+    background:rgba(255,255,255,0.2);
+    padding:12px;
+    text-align:left;
+    font-weight:600;
+}
+
+.content table td{
+    padding:12px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+.content table tr:hover{
+    background:rgba(255,255,255,0.1);
+}
+
+
+/* ===== FOOTER ===== */
+
+.footer{
+    margin-top:auto;
+    background:#1e293b;
+    color:#ffffff;
+    padding:15px;
+    text-align:center;
+}
